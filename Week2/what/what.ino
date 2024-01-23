@@ -24,14 +24,15 @@ void lab202() {
     case 0:         //Begin State
     if(!flag){
       Serial.println();
-      Serial.println();
       Serial.println("Ready!!! Please enter first operand");
       flag = true;
     }
       if(Serial.available() > 0 ){
         f1 = Serial.parseFloat();
-        state++;    //Change from Start to Opr1
-        flag = false;
+        if(f1 !=0){
+          state++;    //Change from Start to Opr1
+          flag = false;
+        }
       }
       delay(50);
       break;
@@ -42,8 +43,14 @@ void lab202() {
     }
       if(Serial.available() > 0 ){
         f2 = Serial.parseFloat();
-        state++;
-        flag = false;
+        if(f2 !=0){
+          state++;
+          flag = false;
+        } else {
+          Serial.println("Invalid operand");
+          Serial.println("Please enter Second ooperand");
+          //flag = true;
+        }
       }
       delay(50);
       break;
