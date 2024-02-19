@@ -1,0 +1,14 @@
+<!DOCTYPE html>\n
+<html lang=\"en\">\n
+<head>\n
+    <meta charset=\"UTF-8\">\n
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n
+    <title>ESP8266 LED Control</title>\n
+</head>\n
+<body>\n
+    <h1>ESP8266 LED Control</h1>\n
+    <form action=\"/led\" method=\"post\">\n
+        <input type=\"submit\" name=\"state\" value=\"ON\">\n
+        <input type=\"submit\" name=\"state\" value=\"OFF\">\n
+</body>\n
+</html>

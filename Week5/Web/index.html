@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello WebSocket</title>
+    <script type="text/javascript">
+        let webSocket;
+        const URL = "ws://172.20.10.3:81";
+        function init() {
+            webSocket = new WebSocket(URL);
+            // open ( connect with server )
+            webSocket.onopen = event => {
+                log("Connected to : " + URL); // log จะเก็บข้อมูลไว้ใน div ที่มี id = console
+            };
+            // close ( disconnect with server )
+            webSocket.onclose = event => {
+                log("Disconnected from : " + URL);
+            };
+            // message ( receive message from server )
+            webSocket.onmessage = event => {
+                log("Received: " + event.data);
+            };
+            // error ( error )
+            webSocket.onerror = event => {
+                log("Error: " + JSON.stringify(event));
+            };
+            
+        }
+        function sendMessage() {
+            const message = document.getElementById("message").value;
+            webSocket.send(message);
+            log("Sent: " + message);
+        }
+        function log(message) {
+            const console = document.getElementById("console");
+            const p = document.createElement("p");
+            p.innerHTML = message;
+            console.appendChild(p);
+        }
+    </script>
+</head>
+<body onload = "init();">
+    <h1>Hello WebSocket</h1>
+    <input type="text" id="message">
+    <button onclick="sendMessage()">Send Message</button>
+    <div id="console"></div>
+</body>
+</html>
