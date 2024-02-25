@@ -6,7 +6,7 @@
   <title>LED Control</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    const ws = new WebSocket("ws://172.20.10.3:81"); // เปลี่ยน IP address ให้ตรงกับ ESP8266 ของคุณ
+    const ws = new WebSocket("ws://192.168.137.60:81"); // เปลี่ยน IP address ให้ตรงกับ ESP8266 ของคุณ
 
     $(document).ready(() => {
       $("#on").click(() => {
