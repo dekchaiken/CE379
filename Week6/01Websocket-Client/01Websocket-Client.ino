@@ -48,11 +48,11 @@ void loop() {
   if(Serial.available() > 0) {
     String command = Serial.readStringUntil('\n');
     command.trim();
-    if (command == "on" || command == "off") {
+    if (command == "red" || command == "blue" || command == "green") {
       webSocket.sendTXT(command);
       Serial.println("Command Sent: " + command);
     } else {
-      Serial.println("Invalid Command. Usage: 'on' or 'off'.");
+      Serial.println("Invalid Command. Usage: 'red' or 'blue' or 'green'.");
     }
   }
 }
