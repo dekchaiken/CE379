@@ -3,19 +3,24 @@
 
 
 #define BAUD_RATE 115200
-#include <DHT.h>
-#define DHT_PIN_BUTTON D3
-#define DHT_PIN D4
+// #include <DHT.h>
+// #define DHT_PIN_BUTTON D3
+// #define DHT_PIN D4
 
-DHT dht(DHT_PIN, DHT11);
+// DHT dht(DHT_PIN, DHT11);
 
 
 //Client1(publisher) --> TOPIC_A --> Client2 (Sub)
 //Client2(publisher) --> TOPIC_B --> Client1 (Sub)
-const char* ssid = "iPhone_win";
-const char* password = "0863827465";
-const char* mqttServer = "test.mosquitto.org";
-const int mqttPort = 1883;
+const char* ssid = "KenNoluv";
+const char* password = "11111111";
+const char* mqtt_server = "broker.netpie.io";
+const int mqtt_port = 1883;
+const char* mqtt_Client = "91590854-1aba-4b90-b3db-35e86a33eb72";
+const char* mqtt_username = "HDaTRhsYkNrUcnzNBqQZt1qburco2jPU";
+const char* mqtt_password = "5TQJpqJobcKk1ps4oqiBu5M1WQ4Rbnp5";
+
+// Topic
 const char* Topic_A = "/dpu/cite/ce379/earn/a";
 const char* Topic_B = "/dpu/cite/ce379/earn/b";
 
